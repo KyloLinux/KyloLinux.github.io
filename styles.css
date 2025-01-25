@@ -1,0 +1,331 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --navy: #0A1A2F;
+    --yellow: #FFD700;
+    --cyan: #00E5FF;
+    --gray: #F5F5F5;
+}
+
+body {
+    background-color: white;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    padding: 1.5rem 5%;
+    background: var(--navy);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    color: var(--yellow);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+}
+
+.logo::after {
+    content: '⚡';
+    margin-left: 0.3rem;
+    opacity: 0.8;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-link {
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--yellow);
+}
+
+/* Hero Section */
+.hero {
+    flex: 1;
+    background: linear-gradient(45deg, var(--navy) 30%, #0F2A4F 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 800px;
+    width: 90%;
+    color: white;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background: var(--yellow);
+    color: var(--navy);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+}
+
+/* Services Section */
+.services {
+    padding: 5rem 5%;
+    background: var(--gray);
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-container h2 {
+    text-align: center;
+    color: var(--navy);
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+.service-card h3 {
+    color: var(--navy);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.service-card ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.service-card li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.service-cta {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.service-cta p {
+    font-size: 1.3rem;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+}
+
+/* Spark Animation Canvas */
+#spark-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+/* Footer */
+.footer {
+    margin-top: auto;
+    padding: 2rem 5%;
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Consultation Page Styles */
+.consultation-section {
+    padding: 4rem 5%;
+    background: var(--gray);
+    min-height: calc(100vh - 120px);
+}
+
+.consultation-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.consultation-container h2 {
+    text-align: center;
+    color: var(--navy);
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+}
+
+.consultation-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.option-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.option-card h3 {
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.consultation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.consultation-form input,
+.consultation-form textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.chat-container {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.chat-messages {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: var(--gray);
+    border-radius: 8px;
+}
+
+.bot-message {
+    background: white;
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.chat-input {
+    display: flex;
+    gap: 1rem;
+}
+
+.chat-input textarea {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.marketing-services h3 {
+    text-align: center;
+    color: var(--navy);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .services-container h2,
+    .consultation-container h2 {
+        font-size: 2rem;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .service-icon {
+        font-size: 2rem;
+    }
+
+    .consultation-options {
+        grid-template-columns: 1fr;
+    }
+
+    .chat-input {
+        flex-direction: column;
+    }
+}

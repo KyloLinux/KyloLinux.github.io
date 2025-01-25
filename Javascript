@@ -1,0 +1,65 @@
+// Spark Animation
+const canvas = document.getElementById('spark-canvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+class Spark {
+    constructor() {
+        this.reset();
+    }
+
+    reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.radius = Math.random() * 2;
+        this.speed = Math.random() * 0.5 + 0.2;
+        this.angle = Math.random() * Math.PI * 2;
+    }
+
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255, 215, 0, 0.8)';
+        ctx.fill();
+    }
+
+    update() {
+        this.x += Math.cos(this.angle) * this.speed;
+        this.y += Math.sin(this.angle) * this.speed;
+        
+        if (this.x < 0 || this.x > canvas.width || 
+            this.y < 0 || this.y > canvas.height) {
+            this.reset();
+        }
+    }
+}
+
+// Animation loop
+const sparks = Array.from({ length: 100 }, () => new Spark());
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    sparks.forEach(spark => {
+        spark.update();
+        spark.draw();
+    });
+    requestAnimationFrame(animate);
+}
+animate();
+
+// Smooth scroll
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
