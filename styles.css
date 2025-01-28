@@ -324,8 +324,17 @@ body {
     .consultation-options {
         grid-template-columns: 1fr;
     }
-
-    .chat-input {
-        flex-direction: column;
+    /* Ensure canvas doesn't interfere with layout */
+    #spark-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
     }
-}
+
+        .chat-input {
+            flex-direction: column;
+    }
+    }
