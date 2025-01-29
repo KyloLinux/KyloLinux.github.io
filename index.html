@@ -1,44 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrightSpark AI - Intelligent Solutions</title>
+    <meta name="description" content="BrightSpark AI - Transform your business with intelligent AI solutions">
+    <title>BrightSpark AI | Intelligent Business Solutions</title>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+    
+    <!-- Core CSS -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Enhanced Header -->
     <header class="header">
         <nav class="navbar container">
-            <a href="/" class="logo">Bright<span>Spark</span></a>
-            
+            <a href="/" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">BrightSpark</span>
+            </a>
+
             <ul class="nav-links">
-                <li><a href="services.html">Services</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="services.html" class="nav-link">Solutions</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="cta-button nav-cta">Get Started</a></li>
             </ul>
-            
-            <button class="mobile-menu" aria-label="Toggle navigation">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                </svg>
+
+            <button class="mobile-menu" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
             </button>
         </nav>
     </header>
 
-    <main>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Enhanced Hero Section -->
         <section class="hero">
             <div class="hero-content container">
-                <h1>Transform Your Business with AI Innovation</h1>
-                <p class="subtitle">Leverage cutting-edge artificial intelligence solutions tailored to your needs</p>
-                <a href="consultation.html" class="cta-button">Start Free Consultation</a>
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="highlight">Transform Your Business</span> with 
+                        <span class="typing-effect"></span>
+                    </h1>
+                    <p class="hero-subtitle">Leverage cutting-edge AI solutions tailored to your enterprise needs</p>
+                    <div class="cta-container">
+                        <a href="consultation.html" class="cta-button primary">
+                            <i class="fas fa-calendar-check"></i> Free Consultation
+                        </a>
+                        <a href="products.html" class="cta-button secondary">
+                            <i class="fas fa-box-open"></i> View Products
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="ai-visualization">
+                        <div class="spark-container"></div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Feature Sections -->
+        <!-- Value Proposition Grid -->
+        <section class="value-proposition section">
+            <div class="container">
+                <h2 class="section-title">Why Choose BrightSpark AI?</h2>
+                <div class="value-grid">
+                    <article class="value-card">
+                        <i class="fas fa-brain value-icon"></i>
+                        <h3>Machine Learning Expertise</h3>
+                        <p>Custom ML solutions that adapt to your business needs</p>
+                    </article>
+                    <article class="value-card">
+                        <i class="fas fa-chart-line value-icon"></i>
+                        <h3>Predictive Analytics</h3>
+                        <p>Forecast trends and make data-driven decisions</p>
+                    </article>
+                    <article class="value-card">
+                        <i class="fas fa-robot value-icon"></i>
+                        <h3>Process Automation</h3>
+                        <p>Streamline operations with intelligent automation</p>
+                    </article>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
 </body>
 </html>
